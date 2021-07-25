@@ -13,25 +13,95 @@ class HomeScreen extends StatelessWidget {
               CustomAppBar(),
               Title(),
               SizedBox(height: 25.0),
+              CustomTextBox(),
               Padding(
-                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                child: Container(
-                  padding: EdgeInsets.only(left: 5.0),
-                  decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(10.0)),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        hintText: 'Search',
-                        hintStyle: TextStyle(fontSize: 14),
-                        border: InputBorder.none,
-                        fillColor: Colors.grey.withOpacity(0.5),
-                        prefixIcon: Icon(Icons.search, color: Colors.grey)),
+                padding: const EdgeInsets.all(30.0),
+                child: Text(
+                  'Recommend',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
+                ),
+              ),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(25.0),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.3),
+                              blurRadius: 6.0,
+                              spreadRadius: 4.0,
+                              offset: Offset(0.0, 3.0),
+                            )
+                          ],
+                        ),
+                        child: Transform.scale(
+                          scale: 0.7,
+                          child: Image(
+                            image: AssetImage('assets/images/burger.png'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 35,
+                      ),
+                      Text(
+                        'Hamburg',
+                        style: TextStyle(color: Colors.orange, fontSize: 20),
+                      ),
+                      Text(
+                        '\$21',
+                        style: TextStyle(color: Colors.orange),
+                      ),
+                    ],
+                  ),
+                ),
+                width: 150,
+                height: 200,
+                decoration: BoxDecoration(
+                  color: Colors.orange.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(15),
                 ),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class CustomTextBox extends StatelessWidget {
+  const CustomTextBox({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(left: 30.0, right: 30.0),
+      child: Container(
+        padding: EdgeInsets.only(left: 5.0),
+        decoration: BoxDecoration(
+            color: Colors.grey.withOpacity(0.15),
+            borderRadius: BorderRadius.circular(10.0)),
+        child: TextField(
+          decoration: InputDecoration(
+              hintText: 'Search',
+              hintStyle: TextStyle(fontSize: 14),
+              border: InputBorder.none,
+              fillColor: Colors.grey.withOpacity(0.5),
+              prefixIcon: Icon(Icons.search, color: Colors.grey)),
         ),
       ),
     );
@@ -88,15 +158,22 @@ class CustomAppBar extends StatelessWidget {
           ),
           Container(
             width: 50,
-            height: 50,
+            height: 45,
             decoration: BoxDecoration(
-              color: Color(0xFFC6E7FE),
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage('assets/images/tuxedo.png'),
-                fit: BoxFit.contain,
-              ),
-            ),
+                color: Color(0xFFC6E7FE),
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage('assets/images/tuxedo.png'),
+                  fit: BoxFit.contain,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    blurRadius: 6.0,
+                    spreadRadius: 4.0,
+                    offset: Offset(0.0, 3.0),
+                  )
+                ]),
           ),
         ],
       ),
