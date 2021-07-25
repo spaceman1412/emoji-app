@@ -12,27 +12,24 @@ class HomeScreen extends StatelessWidget {
             children: [
               CustomAppBar(),
               Title(),
+              SizedBox(height: 25.0),
               Padding(
-                padding: const EdgeInsets.only(top: 25, bottom: 10),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Container(
-                    width: 300,
-                    height: 150,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
+                padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                child: Container(
+                  padding: EdgeInsets.only(left: 5.0),
+                  decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(10.0)),
+                  child: TextField(
+                    decoration: InputDecoration(
                         hintText: 'Search',
-                        prefixIcon: Icon(Icons.search),
-                        filled: true,
-                        fillColor: Colors.grey.withOpacity(0.2),
-                      ),
-                    ),
+                        hintStyle: TextStyle(fontSize: 14),
+                        border: InputBorder.none,
+                        fillColor: Colors.grey.withOpacity(0.5),
+                        prefixIcon: Icon(Icons.search, color: Colors.grey)),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
