@@ -19,14 +19,25 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(30.0),
                 child: Text(
-                  'Recommend',
+                  'Recommended',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
                 ),
               ),
-              CardItem(),
+              Container(
+                height: 200,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    CardItem(),
+                    CardItem(),
+                    CardItem(),
+                    CardItem(),
+                  ],
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 40.0, left: 20),
                 child: Text(
