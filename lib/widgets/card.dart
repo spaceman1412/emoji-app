@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CardItem extends StatelessWidget {
-  const CardItem({
-    Key? key,
-  }) : super(key: key);
+  final imagePath;
+  final nameItem;
+  final price;
+  final Color colorCard;
+  final Color colorText;
+  CardItem(this.imagePath, this.nameItem, this.price, this.colorCard,
+      this.colorText);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +36,7 @@ class CardItem extends StatelessWidget {
                 child: Transform.scale(
                   scale: 0.7,
                   child: Image(
-                    image: AssetImage('assets/images/burger.png'),
+                    image: AssetImage(imagePath),
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -41,12 +45,15 @@ class CardItem extends StatelessWidget {
                 height: 35,
               ),
               Text(
-                'Hamburg',
-                style: TextStyle(color: Colors.orange, fontSize: 20),
+                '$nameItem',
+                style: TextStyle(
+                  color: colorText,
+                  fontSize: 20,
+                ),
               ),
               Text(
-                '\$21',
-                style: TextStyle(color: Colors.orange),
+                '\$$price',
+                style: TextStyle(color: colorText),
               ),
             ],
           ),
@@ -54,7 +61,7 @@ class CardItem extends StatelessWidget {
         width: 150,
         height: 200,
         decoration: BoxDecoration(
-          color: Colors.orange.withOpacity(0.2),
+          color: colorCard,
           borderRadius: BorderRadius.circular(15),
         ),
       ),

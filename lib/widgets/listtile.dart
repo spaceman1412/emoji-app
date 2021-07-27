@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
 class CustomListtile extends StatelessWidget {
-  const CustomListtile({Key? key}) : super(key: key);
+  final imagePath;
+  final nameItem;
+  final int starCount;
+  final finalPrice;
+  final firstPrice;
+
+  CustomListtile(this.imagePath, this.nameItem, this.starCount, this.finalPrice,
+      this.firstPrice);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(30.0),
+      padding: const EdgeInsets.only(left: 30, top: 20),
       child: Row(
         children: [
           Container(
@@ -26,7 +33,7 @@ class CustomListtile extends StatelessWidget {
             child: Transform.scale(
               scale: 0.6,
               child: Image(
-                image: AssetImage('assets/images/hotdog.png'),
+                image: AssetImage(imagePath),
                 fit: BoxFit.contain,
               ),
             ),
@@ -38,47 +45,33 @@ class CustomListtile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Delicious hot dog',
+                  '$nameItem',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),
                 ),
                 Row(
-                  children: [
-                    Icon(
+                  children: List<Widget>.generate(
+                    starCount,
+                    (index) => Icon(
                       Icons.star,
                       color: Colors.yellow,
                       size: 15,
                     ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                      size: 15,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                      size: 15,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                      size: 15,
-                    ),
-                  ],
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      '\$6',
+                      '\$$finalPrice',
                       style: TextStyle(color: Colors.red, fontSize: 17),
                     ),
                     Text('   '),
                     Text(
-                      '\$18',
+                      '\$$firstPrice',
                       style: TextStyle(
                           color: Colors.grey,
                           decoration: TextDecoration.lineThrough,
@@ -90,10 +83,10 @@ class CustomListtile extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 65),
+            padding: const EdgeInsets.only(left: 80),
             child: Container(
-                width: 50,
-                height: 50,
+                width: 45,
+                height: 45,
                 decoration: BoxDecoration(
                   color: Colors.red.withOpacity(0.4),
                   boxShadow: [
