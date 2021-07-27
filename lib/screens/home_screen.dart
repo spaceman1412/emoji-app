@@ -50,9 +50,9 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               CustomListtile('assets/images/hotdog.png', 'Delicious hot dog', 4,
-                  '6', '18'),
-              CustomListtile(
-                  'assets/images/pizza.png', 'Cheese pizza', 5, '12', '18'),
+                  '6', '18', 80),
+              CustomListtile('assets/images/pizza.png', 'Cheese pizza', 5, '12',
+                  '18', 108),
             ],
           ),
         ),

@@ -6,9 +6,10 @@ class CustomListtile extends StatelessWidget {
   final int starCount;
   final finalPrice;
   final firstPrice;
+  final double paddingLength;
 
   CustomListtile(this.imagePath, this.nameItem, this.starCount, this.finalPrice,
-      this.firstPrice);
+      this.firstPrice, this.paddingLength);
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +84,7 @@ class CustomListtile extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 80),
+            padding: EdgeInsets.only(left: paddingLength),
             child: Container(
                 width: 45,
                 height: 45,
