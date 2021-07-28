@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 40.0, left: 20),
+                padding: const EdgeInsets.only(top: 40.0, left: 30),
                 child: Text(
                   'FEATURED',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
@@ -96,7 +96,7 @@ class Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 25),
+      padding: const EdgeInsets.only(left: 30),
       child: Column(
         children: [
           Align(
@@ -127,7 +127,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(35.0),
+      padding: const EdgeInsets.all(30.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
