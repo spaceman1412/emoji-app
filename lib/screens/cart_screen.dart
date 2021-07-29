@@ -1,6 +1,8 @@
+import 'package:emoji_app/providers/counter_provider.dart';
 import 'package:emoji_app/widgets/listcart.dart';
 import 'package:emoji_app/widgets/listtile.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -105,20 +107,26 @@ class add_cart extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 15, top: 4),
                     child: Row(
                       children: [
-                        Icon(
-                          Icons.remove,
-                          size: 20,
-                          color: Colors.red.withOpacity(0.8),
+                        GestureDetector(
+                          onTap: () => context.read<Counter>().decrement(),
+                          child: Icon(
+                            Icons.remove,
+                            size: 20,
+                            color: Colors.red.withOpacity(0.8),
+                          ),
                         ),
                         Text(
-                          ' 2 ',
+                          ' ${context.watch<Counter>().count} ',
                           style: TextStyle(
                               color: Colors.red.withOpacity(0.8), fontSize: 23),
                         ),
-                        Icon(
-                          Icons.add,
-                          size: 20,
-                          color: Colors.red.withOpacity(0.8),
+                        GestureDetector(
+                          onTap: () => context.read<Counter>().increment(),
+                          child: Icon(
+                            Icons.add,
+                            size: 20,
+                            color: Colors.red.withOpacity(0.8),
+                          ),
                         ),
                       ],
                     ),

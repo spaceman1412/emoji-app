@@ -85,26 +85,31 @@ class CustomListtile extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(left: paddingLength),
-            child: Container(
-                width: 45,
-                height: 45,
-                decoration: BoxDecoration(
-                  color: Colors.red.withOpacity(0.4),
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 12,
-                      offset: Offset(0, 10),
-                      spreadRadius: 0.5,
-                      color: Colors.red.withOpacity(0.2),
-                    )
-                  ],
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.add,
-                  size: 30,
-                  color: Colors.white,
-                )),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/second');
+              },
+              child: Container(
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.red.withOpacity(0.4),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 12,
+                        offset: Offset(0, 10),
+                        spreadRadius: 0.5,
+                        color: Colors.red.withOpacity(0.2),
+                      )
+                    ],
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.add,
+                    size: 30,
+                    color: Colors.white,
+                  )),
+            ),
           )
         ],
       ),

@@ -7,7 +7,11 @@ class EmojiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CartScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/second': (context) => CartScreen(),
+      },
       theme: ThemeData(
         textTheme: GoogleFonts.notoSansTextTheme(
           Theme.of(context).textTheme,
